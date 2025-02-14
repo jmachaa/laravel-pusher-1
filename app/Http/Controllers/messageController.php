@@ -11,7 +11,8 @@ class messageController extends Controller
 {
     $message = $request->input('message');
     
-    broadcast(new MessageSent($message))->toOthers();
+    
+    event(new MessageSent($message));
 
     return response()->json(['success' => true]);
 }
