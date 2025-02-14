@@ -15,6 +15,9 @@ use App\Http\Controllers\MessageController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('message');
 });
-Route::post('/send-message', [MessageController::class, 'sendMessage']);
+Route::post('/send-message', [MessageController::class, 'sendMessage'])->name('send-message');
+Route::get('/pusher', function () {
+    return view('pusher');
+});
